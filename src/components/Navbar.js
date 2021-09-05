@@ -7,9 +7,8 @@ import { Menu } from "antd";
 import {
   HomeOutlined,
   AppstoreOutlined,
-  FormOutlined
+  FormOutlined,
 } from "@ant-design/icons";
-
 
 const Navbar = () => {
   const [current, setCurrent] = useState("home");
@@ -20,35 +19,41 @@ const Navbar = () => {
   };
 
   const rightAlighStyle = {
-    position: 'relative',
-    display: 'flex',
-    justifyContent: 'right',
-  }
+    position: "relative",
+    display: "flex",
+    justifyContent: "right",
+  };
 
   return (
     <Menu
       style={rightAlighStyle}
       onClick={handleClick}
-      selectedKeys={[current]}
+      selectedKeys={current}
       mode="horizontal"
     >
-      
-        <Menu.Item style={{color:"black"}} key="home" icon={<HomeOutlined />}>
-          <Link style={{color:"black"}} to={"/"} className="nav-link">
-            Home
-          </Link>
-        </Menu.Item>
-        <Menu.Item style={{color:"black"}} key="about" icon={<AppstoreOutlined />}>
-          <Link style={{color:"black"}} to={"/about"} className="nav-link">
-            About
-          </Link>
-        </Menu.Item>
-        <Menu.Item style={{color:"black"}} key="register" icon={<FormOutlined />}>
-          <Link style={{color:"black"}} to={"/register"} className="nav-link">
+      <Menu.Item style={{ color: "black" }} key="home" icon={<HomeOutlined />}>
+        <Link style={{ color: "black" }} to={"/"} className="nav-link">
+          Home
+        </Link>
+      </Menu.Item>
+      <Menu.Item
+        style={{ color: "black" }}
+        key="about"
+        icon={<AppstoreOutlined />}
+      >
+        <Link style={{ color: "black" }} to={"/about"} className="nav-link">
+          About
+        </Link>
+      </Menu.Item>
+      <Menu.Item
+        style={{ color: "black" }}
+        key="register"
+        icon={<FormOutlined />}
+      >
+        <Link style={{ color: "black" }} to={"/register"} className="nav-link">
           Register
-          </Link>
-        </Menu.Item>
-
+        </Link>
+      </Menu.Item>
     </Menu>
   );
 };
